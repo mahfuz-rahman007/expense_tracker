@@ -34,8 +34,12 @@ class ExpenseTracker:
         expenseFile.close()
 
     # Return a Expense View
-    def view_expense():
-        pass
+    def view_expense(self, filename = "data/expense.json"):
+        expense_text = self.getExpenseFromJson(filename)
+        expense_array = json.loads(expense_text)
+        print("#Date ----------- #Amount ------- #Category")
+        for expense in expense_array['expense']:
+            print(f"{expense['date']} ------  {expense['amount']}   --------- {expense['category']}")
 
     def filter_expense(category):
         pass
