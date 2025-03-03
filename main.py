@@ -1,4 +1,5 @@
 import ExpenseTracker
+import Transaction
 
 def main():
     tracker = ExpenseTracker.ExpenseTracker()
@@ -13,13 +14,19 @@ def main():
         choice = input("Choose an Option: ")
 
         if choice == "1":
-            pass
+            amount = float(input("Enter Amount: "))
+            category = input("Enter Category: ")
+            date = input("Enter Date (YYYY-MM-DD): ")
+            description = input("Enter Description (Optional): ")
+            tracker.add_expense(Transaction.Transaction(amount, category, date, description))
+            print("New Expense Added")
 
         elif choice == "2":
-            pass
+            tracker.view_expense()
 
         elif choice == "3":
-            pass
+            category = input("Enter Category To Filter: ")
+            tracker.filter_expense(category)
 
         elif choice == "4":
             print("Exiting... Bye!!")
