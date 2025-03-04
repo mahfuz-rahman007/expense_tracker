@@ -9,7 +9,10 @@ def main():
         print("1. Add Expense")
         print("2. View Expense")
         print("3. Filter By Category")
-        print("4. Exit")
+        print("4. Delete Expense")
+        print("5. Update Expense")
+        print("6. Summarize Expense")
+        print("7. Exit")
 
         choice = input("Choose an Option: ")
 
@@ -29,6 +32,15 @@ def main():
             tracker.filter_expense(category)
 
         elif choice == "4":
+            pass
+
+        elif choice == "5":
+            pass
+
+        elif choice == "6":
+            pass
+
+        elif choice == "7":
             print("Exiting... Bye!!")
             break
 

@@ -41,8 +41,18 @@ class ExpenseTracker:
         for expense in expense_array['expense']:
             print(f"{expense['date']} ------  {expense['amount']}   --------- {expense['category']}")
 
-    def filter_expense(category):
-        pass
+    def filter_expense(self, category, filename = "data/expense.json"):
+        expense_text = self.getExpenseFromJson(filename)
+        expense_array = json.loads(expense_text)
+        print("#Date ----------- #Amount ------- #Category")
+        total_expense = 0
+        for expense in expense_array['expense']:
+            if(expense['category'] == category):
+                total_expense += 1
+                print(f"{expense['date']} ------  {expense['amount']}   --------- {expense['category']}")
+        
+        if total_expense == 0:
+            print("There is no Expense with this Category")
 
     def summarize_expenses():
         pass
